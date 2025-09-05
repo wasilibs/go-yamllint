@@ -1,3 +1,4 @@
+version: 2
 builds:
   - main: ./cmd/yamllint
     id: yamllint
@@ -10,6 +11,7 @@ builds:
       - darwin_amd64
       - darwin_arm64
       - windows_amd64
+      - windows_arm64
 archives:
   - format_overrides:
       - goos: windows
@@ -19,6 +21,6 @@ release:
 checksum:
   name_template: "checksums.txt"
 snapshot:
-  name_template: "{{ incpatch .Version }}-next"
+  version_template: "{{ incpatch .Version }}-next"
 changelog:
-  skip: true
+  disable: true

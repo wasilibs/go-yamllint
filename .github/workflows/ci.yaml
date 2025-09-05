@@ -15,20 +15,20 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - macos-13
-          - macos-14
-          - ubuntu-22.04
-          - windows-2022
+          - macos-15
+          - ubuntu-24.04
+          - windows-2025
     steps:
       - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
 
-      - uses: actions/setup-go@d35c59abb061a4a6fb18e82ac0862c26744d6ab5 # v5.5.0
-        with:
-          go-version-file: go.work
-          cache-dependency-path: "**/go.sum"
+      - uses: curioswitch/go-build/.github/actions/setup-go@7489f72867246693fc1cc65560c68cdc860a1f8a # v0.5.2
 
-      - name: run checks
-        run: go run ./build check
+      - name: run lints
+        if: startsWith(matrix.os, 'ubuntu-')
+        run: go run ./build lint
+
+      - name: run tests
+        run: go run ./build test
 
       - name: build snapshot
         if: startsWith(matrix.os, 'ubuntu-')
