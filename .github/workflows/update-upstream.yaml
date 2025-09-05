@@ -5,32 +5,11 @@ on:
     - cron: "5 4 * * *"
   workflow_dispatch:
 
+permissions:
+  id-token: write
+  attestations: write
+
 jobs:
   build:
-    name: Release
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
-
-      - uses: curioswitch/go-build/.github/actions/setup-go@7489f72867246693fc1cc65560c68cdc860a1f8a # v0.5.2
-
-      - run: go run ./build update
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - run: git diff --exit-code
-        id: check-diff
-        continue-on-error: true
-
-      - name: build and create PR
-        if: steps.check-diff.outcome == 'failure'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -b update-upstream-${{ github.run_id }}
-          git add .
-          git commit -m "Update to latest upstream"
-          git push -u origin -f update-upstream-${{ github.run_id }}
-          gh pr create --fill --head update-upstream-${{ github.run_id }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: wasilibs/actions/.github/workflows/update.yaml@435fbabb9723e77fd6ba71e6ec8744efd1a56be1
+    secrets: inherit
