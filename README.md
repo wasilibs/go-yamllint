@@ -1,7 +1,7 @@
 # go-yamllint
 
 go-yamllint is a distribution of [yamllint][1], that can be built with Go. It does not actually reimplement any
-functionality of yamllint in Go, instead packaging it with the WASI build of [Python][3], and 
+functionality of yamllint in Go, instead packaging it with the WASI build of [Python][3], and
 executing with the pure Go Wasm runtime [wazero][2]. This means that `go install` or `go run`
 can be used to execute it, with no need to rely on separate package managers such as pnpm,
 on any platform that Go supports.

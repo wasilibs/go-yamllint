@@ -1,4 +1,2 @@
-github.com/tetratelabs/wazero v1.7.1 h1:QtSfd6KLc41DIMpDYlJdoMc6k7QTN246DM2+n2Y/Dx8=
-github.com/tetratelabs/wazero v1.7.1/go.mod h1:ytl6Zuh20R/eROuyDaGPkp82O9C/DJfXAwJfQ3X6/7Y=
-github.com/wasilibs/go-protoc-gen-builtins v1.26.1 h1:OBitrHVlEDD4j/k9PLU+61GFnYlUE6vo+fosMzssP1k=
-github.com/wasilibs/go-protoc-gen-builtins v1.26.1/go.mod h1:rKeiNH+6pzq6ljgp1tZKMLE0ZFFleOA+R74IIAzqbIc=
+github.com/tetratelabs/wazero v1.9.0 h1:IcZ56OuxrtaEz8UYNRHBrUa9bYeX9oVY93KspZZBf/I=
+github.com/tetratelabs/wazero v1.9.0/go.mod h1:TSbcXCfFP0L2FGkRPxHphadXPjo1T6W+CseNNY7EkjM=
