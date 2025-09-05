@@ -8,16 +8,13 @@ on:
 jobs:
   build:
     name: Release
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
 
-      - uses: actions/setup-go@v5
-        with:
-          go-version-file: go.work
-          cache-dependency-path: "**/go.sum"
+      - uses: curioswitch/go-build/.github/actions/setup-go@7489f72867246693fc1cc65560c68cdc860a1f8a # v0.5.2
 
-      - run: go run build update
+      - run: go run ./build update
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

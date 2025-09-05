@@ -2,11 +2,9 @@ package yamllint
 
 import (
 	"bytes"
-	"fmt"
 	"strings"
 	"testing"
 
-	"github.com/wasilibs/go-yamllint/internal/pysite"
 	"github.com/wasilibs/go-yamllint/internal/runner"
 )
 
@@ -34,7 +32,7 @@ func TestRuns(t *testing.T) {
 			stdout := bytes.Buffer{}
 			stderr := bytes.Buffer{}
 
-			ret := runner.Run("yamllint", []string{fmt.Sprintf("testdata/%s", tc.file)}, pysite.Python, &stdin, &stdout, &stderr, ".")
+			ret := runner.Run("yamllint", []string{"testdata/" + tc.file}, &stdin, &stdout, &stderr, ".")
 			if ret != tc.ret {
 				t.Fatalf("unexpected return code: have %d, want %d", ret, tc.ret)
 			}

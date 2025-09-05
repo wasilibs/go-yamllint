@@ -1,0 +1,6 @@
+[project]
+name = "go-protoc-yamllint"
+version = "0.1.0"
+description = "python site packages with yamllint"
+authors = [{ name = "wasilibs authors" }]
+requires-python = "~=3.13.7"

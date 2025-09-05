@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>curioswitch/go-build:renovate-export"],
+  "packageRules": [
+    {
+      // Maybe can enable someday if we can configure to update to n-1.
+      // https://github.com/renovatebot/renovate/discussions/22214
+      "matchDatasources": ["golang-version"],
+      "enabled": false
+    }
+  ]
+}

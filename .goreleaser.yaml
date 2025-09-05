@@ -1,24 +1,26 @@
+version: 2
 builds:
-- main: ./cmd/yamllint
-  id: yamllint
-  binary: yamllint
-  env:
-  - CGO_ENABLED=0
-  targets:
-  - linux_amd64
-  - linux_arm64
-  - darwin_amd64
-  - darwin_arm64
-  - windows_amd64
+  - main: ./cmd/yamllint
+    id: yamllint
+    binary: yamllint
+    env:
+      - CGO_ENABLED=0
+    targets:
+      - linux_amd64
+      - linux_arm64
+      - darwin_amd64
+      - darwin_arm64
+      - windows_amd64
+      - windows_arm64
 archives:
-- format_overrides:
-  - goos: windows
-    format: zip
+  - format_overrides:
+      - goos: windows
+        format: zip
 release:
   mode: append
 checksum:
-  name_template: 'checksums.txt'
+  name_template: "checksums.txt"
 snapshot:
-  name_template: "{{ incpatch .Version }}-next"
+  version_template: "{{ incpatch .Version }}-next"
 changelog:
-  skip: true
+  disable: true
