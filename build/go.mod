@@ -4,7 +4,7 @@ go 1.25.0
 
 require (
 	github.com/goyek/x v0.3.0
-	github.com/wasilibs/tools v0.0.0-20250930012627-6c5b4c4d91df
+	github.com/wasilibs/tools v0.0.0-20251021010229-6a2ca4a45adb
 )
 
 require (
@@ -12,7 +12,7 @@ require (
 	github.com/cli/go-gh/v2 v2.12.2 // indirect
 	github.com/cli/safeexec v1.0.1 // indirect
 	github.com/cli/shurcooL-graphql v0.0.4 // indirect
-	github.com/curioswitch/go-build v0.6.1 // indirect
+	github.com/curioswitch/go-build v0.6.2 // indirect
 	github.com/fatih/color v1.18.0 // indirect
 	github.com/google/go-github/v74 v74.0.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
