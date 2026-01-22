@@ -40,8 +40,7 @@ func Run(_ string, cmdArgs []string, stdin io.Reader, stdout io.Writer, _ io.Wri
 
 	wasi_snapshot_preview1.MustInstantiate(ctx, rt)
 
-	args := []string{"python", ".venv/bin/yamllint"}
-	args = append(args, cmdArgs...)
+	args := append([]string{"python", ".venv/bin/yamllint"}, cmdArgs...)
 
 	libDir, _ := fs.Sub(site, "lib")
 	venvDir, _ := fs.Sub(site, ".venv")
