@@ -4,12 +4,12 @@ go 1.25.0
 
 require (
 	github.com/goyek/x v0.4.0
-	github.com/wasilibs/tools v0.0.0-20260122051245-ab3579b3018a
+	github.com/wasilibs/tools v0.0.0-20260127004603-45a4eb1bc2a5
 )
 
 require (
 	github.com/aymanbagabas/go-osc52/v2 v2.0.1 // indirect
-	github.com/cli/go-gh/v2 v2.12.2 // indirect
+	github.com/cli/go-gh/v2 v2.13.0 // indirect
 	github.com/cli/safeexec v1.0.1 // indirect
 	github.com/cli/shurcooL-graphql v0.0.4 // indirect
 	github.com/curioswitch/go-build v0.7.1 // indirect
