@@ -57,7 +57,7 @@ func Run(_ string, cmdArgs []string, stdin io.Reader, stdout io.Writer, _ io.Wri
 			WithFSMount(libDir, "lib").
 			WithFSMount(venvDir, ".venv").
 			WithDirMount(cwd, "/")).
-		WithEnv("PYTHONPATH", ".venv/lib/python3.13/site-packages").
+		WithEnv("PYTHONPATH", ".venv/lib/python3.14/site-packages").
 		WithEnv("PYTHONDONTWRITEBYTECODE", "1")
 	for _, env := range os.Environ() {
 		k, v, _ := strings.Cut(env, "=")
